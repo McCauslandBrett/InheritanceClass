@@ -2,7 +2,10 @@
 #define BASECLASS_H
 #include"iostream"
 using namespace std;
-
+/* Baseclass is templated however doesnt make use of templates
+ * only templated
+ *
+ */
 template <typename t1,typename t2>
 class BaseClass
 {
