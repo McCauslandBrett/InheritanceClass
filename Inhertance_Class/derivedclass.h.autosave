@@ -59,9 +59,8 @@ void DerivedClass<t1, t2>::print_derivedVar1() const
 }
 //Copy Constructor
 template <typename t1,typename t2>
-
 DerivedClass<t1, t2>::DerivedClass(const DerivedClass<t1, t2>& object)
- {
+{
 
 }
 

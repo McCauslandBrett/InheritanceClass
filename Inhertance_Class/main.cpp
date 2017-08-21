@@ -3,6 +3,12 @@
 using namespace std;
 void Test_construct_desctruct();
 void How_to();
+
+/* This is a boiler plate for any project that uses basic Inhertance structure
+ * Notes for proper use are at the bottom of the page
+ * Page will be updated in effort to reach the right balnce of generic reusablity and comprehensiveness
+ * It very incomplete and if becomes usefull will be filled in
+*/
 int main()
 {
     system("clear");
@@ -33,6 +39,9 @@ void How_to()
     //Access to a redefined base function
     DerivedClass<int,int> r1(2,6,"hi",7);
     r1.BaseClass::status();
+    // These are both legal!
+        BaseClass<int,int> &B= r1;
+        BaseClass<int,int> *Bp = &r1;
 
 
 }
@@ -41,7 +50,10 @@ void How_to()
  * defualt constructor is called if you do not invoke a constructor in derived class
  * Object builds base first , It builds inside out
  * Object deconstructs from outside in, derived class first
- * IN
+ * Deconstructor
+ * It is the job of the base class deconstructor to invoke delete on the inherted member variables
+ * Derived class must invoke delete on all data it is pointing to
+ * Base class of course is equally responsible for any of its member variables or allocated memory
  */
 
 /* COPY CONSTRUCTORS & ASSIGNMENT OPERATOR
